@@ -7,13 +7,17 @@ The current date and time is displayed at the top using day.js.
 <br />
 You can enter your daily task in the appropriate time block. Click on the right side save icon to save your task to local storage, which will then be reloaded next time you open the app. 
 
+<br />
+
+Current hour will be highlighted in red. Past hours will be grey, and future hours will be green.
+
 ## Screenshots
 <img width="1222" alt="Screen Shot 2022-08-07 at 10 06 01 PM" src="https://user-images.githubusercontent.com/108253013/183343300-bf296472-ae95-4ca0-b055-fb9e29e8e4c0.png">
 
 ## Github and Deployed Link
-Github Link: https://github.com/shuczhu/Daily-Planner
+Github Link: https://github.com/shuczhu/Work-Day-Scheduler
 <br />
-Deployed Application: https://shuczhu.github.io/Daily-Planner
+Deployed Application: https://shuczhu.github.io/Work-Day-Scheduler
 <br />
 
 Created by Shu Zhu on Aug 7 2022
