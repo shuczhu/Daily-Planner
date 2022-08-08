@@ -29,13 +29,13 @@ for (i = 0; i < 9; i++) {
         item.setAttribute("data-id", i);
 
         //set textarea color to reflect past, present, and future
-        if (i < dayjs().hour()) {
+        if (i+9 < dayjs().hour()) {
             item.classList.add("past")
         } 
-        else if (i === dayjs().hour()) {
+        else if (i+9 === dayjs().hour()) {
             item.classList.add("present");
             item.textContent = "current hour";
-        } else if (i > dayjs().hour()) {
+        } else if (i+9 > dayjs().hour()) {
             item.classList.add("future")
         }
 
