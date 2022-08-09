@@ -17,10 +17,13 @@ for (i = 0; i < 9; i++) {
         //create horizontal container
         var horContainer = document.createElement("div");
         horContainer.classList.add("row")
-        
+
         //create time box on the left side
         var time = document.createElement("p");
-        time.textContent = i+9 + ":00";
+        if (i + 9 > 12) {
+            time.textContent = i + 9 - 12 + ":00PM"
+        } else if (i + 9 === 12) { time.textContent = i + 9 + ":00PM" }
+        else { time.textContent = i + 9 + ":00AM" };
         time.classList.add("time-block", "hour");
 
         //create textarea to record tasks
@@ -29,20 +32,20 @@ for (i = 0; i < 9; i++) {
         item.setAttribute("data-id", i);
 
         //set textarea color to reflect past, present, and future
-        if (i+9 < dayjs().hour()) {
+        if (i + 9 < dayjs().hour()) {
             item.classList.add("past")
-        } 
-        else if (i+9 === dayjs().hour()) {
+        }
+        else if (i + 9 === dayjs().hour()) {
             item.classList.add("present");
             item.textContent = "current hour";
-        } else if (i+9 > dayjs().hour()) {
+        } else if (i + 9 > dayjs().hour()) {
             item.classList.add("future")
         }
 
         //create save button
         var save = document.createElement("button");
-        save.classList.add("saveBtn","fa","fa-folder");
-        
+        save.classList.add("saveBtn", "fa", "fa-folder");
+
         //save button saves to local storage
         save.addEventListener('click', function () {
             var taskText = item.value;
@@ -59,7 +62,8 @@ for (i = 0; i < 9; i++) {
         for (j = 0; j < taskStorage.length; j++) {
             if (taskStorage[j].time == i) {
                 item.textContent = taskStorage[j].task;
-            }}
+            }
+        }
 
         container.appendChild(horContainer);
         horContainer.appendChild(time);
@@ -69,6 +73,6 @@ for (i = 0; i < 9; i++) {
 
     createTimeGrid();
 
-    }
+}
 
 
